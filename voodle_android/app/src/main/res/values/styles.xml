@@ -1,0 +1,29 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Voodle" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorPrimary">@android:color/holo_red_dark</item>
+        <item name="colorPrimaryDark">#131d27</item>
+        <item name="colorAccent">#4f83cc</item>
+        <item name="android:navigationBarColor">#131d27</item>
+    </style>
+
+    <!--<style name="login" parent="TextAppearance.AppCompat">-->
+        <!--&lt;!&ndash; Hint color and label color in FALSE state &ndash;&gt;-->
+        <!--<item name="android:textColorHint">#999</item>-->
+        <!--<item name="android:textSize">20sp</item>-->
+        <!--&lt;!&ndash; Label color in TRUE state and bar color FALSE and TRUE State &ndash;&gt;-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+        <!--<item name="colorControlNormal">#999</item>-->
+        <!--<item name="colorControlActivated">@color/colorAccent</item>-->
+        <!--<item name="android:textColor">@color/colorAccent</item>-->
+    <!--</style>-->
+
+</resources>

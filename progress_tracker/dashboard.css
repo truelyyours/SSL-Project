@@ -1,0 +1,431 @@
+body {
+    margin: 0;
+}
+
+/* for clearing floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a black background color to the top navigation */
+#topnav {
+    top: 0; left: 0;
+    box-sizing: border-box;
+    padding: 0 50px 0 0;
+    width: 100%;
+    background-color: #333;
+    line-height: 48px;
+}
+#sidebar-toggle-checkbox:checked ~ div #right-side-bar {
+    margin-left: -320px;
+}
+#right-side-bar {
+    background-color: #333;
+    color: #999;
+    font-family: 'josefin slab', serif;
+    box-sizing: border-box;
+    border-right: 3px solid black;
+    padding: 0 8px 0 16px;
+    overflow: auto;
+    direction: rtl;
+    flex-grow: 0;
+    flex-basis: 320px;
+    flex-shrink: 0;
+    transition: 1s ease;
+    margin-left: 0;
+}
+#right-side-bar * {
+    direction: ltr;
+}
+@media screen and (max-width: 550px) {
+    #right-side-bar {
+        flex-basis: 100%;
+    }
+    #sidebar-toggle-checkbox:checked ~ div #right-side-bar {
+        margin-left: -100%;
+    }
+    #site {
+        flex-basis: 100%;
+        margin-right: 0;
+        transition: 1s ease;
+    }
+    #sidebar-toggle-checkbox:not(:checked) ~ div #site {
+        margin-right: -100%;
+    }
+}
+
+#sessions_list {
+    list-style-type: circle;
+    padding: 0;
+}
+#sessions_list > span {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0.5em 0;
+}
+#right-side-bar i {
+    margin: 0 0.5em;
+}
+#sessions_list > li {
+    display: block;
+    padding: 0.5em 0 0.5em 1.5em;
+    cursor: pointer;
+}
+#sessions_list > li:hover {
+    background: #222;
+    color: #ddd;
+}
+#sessions_list > li > i {
+    color: #8bc34a;
+}
+#sessions_list > li:hover > i {
+    color: #FF9800;
+}
+/* Scrollbar */
+#right-side-bar::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+#right-side-bar::-webkit-scrollbar-track {
+	display: none;
+}
+
+#right-side-bar::-webkit-scrollbar-thumb {
+	background-color: #666;
+	border-radius: 3px;
+}
+
+#right-side-bar::-webkit-scrollbar-thumb:hover {
+	background-color: #fb8c00;
+}
+
+/* Scrollbar */
+#site::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+#site::-webkit-scrollbar-track {
+	display: none;
+}
+
+#site::-webkit-scrollbar-thumb {
+	background-color: #666;
+}
+
+#site::-webkit-scrollbar-thumb:hover {
+    background: deepskyblue;
+}
+
+#site {
+    background-color: white;
+    color: black;
+    font-family: 'josefin slab', serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 10px 30px 10px;
+    overflow: auto;
+    flex-grow: 1;
+}
+
+iframe {
+    cursor: text;
+    font-family: 'quicksand';
+    width: 100%;
+    border: none;
+    border-radius: 1px;
+}
+
+#editor_topbar {
+    list-style: none;
+    padding: 0;
+    box-sizing: inherit;
+    border-top: 4px solid black;
+    margin: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 1px 1px rgba(0,0,0,0.16);
+    border-radius: inherit;
+}
+
+#editor_topbar > li {
+    float: left;
+    margin: 0 2px;
+}
+#editor_topbar > li > i {
+    margin: 12px;
+}
+#editor_topbar > li:hover {
+    background: #eee;
+    cursor: pointer;
+}
+
+#preview_latex {
+    display: block;
+    background: springgreen;
+    float: right;
+    padding: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+input:not([type]), input[type=number] {
+    margin: 5px 0;
+    border: 0;
+    border-bottom: 2px solid pink;
+    padding: 5px;
+    font-size: large;
+    font-family: inherit;
+    outline: none;
+    transition: 0.1s;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+input:focus {
+    border-bottom-color: deepskyblue;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}   
+
+#add_div {
+    position: absolute;
+    display: none;
+    background: lightcoral;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    white-space: nowrap;
+    top: 125%;
+    left: 0;
+    border-radius: 4px;
+    width: 100%;
+}
+#add_div::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent lightcoral transparent;
+}
+#add_div * {
+    margin: 0;
+    padding: 8px 0;
+}
+#add_div *:hover {
+    background: #ff9c9c;
+    color: firebrick;
+}
+textarea {
+    outline: none;
+    border: 1px solid black;
+    resize: none;
+    border: 0;
+    border-bottom: 2px solid pink;
+    font-family: inherit;
+    font-size: large;
+    width: calc(100% - 60px);
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+textarea:focus {
+    border-bottom: 2px solid deepskyblue;
+    background: aliceblue;
+}
+.fa-trash-alt:hover {
+    color: crimson;
+}
+.fa-flag {
+    color: #ddd;
+}
+
+.fa-flag:hover {
+    color: #aaa;
+}
+.fa-flag.checkpoint {
+    color: deepskyblue;
+}
+
+/* The checkbox/radiobox container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 2em;
+    margin-bottom: 0.5em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: inline-block;
+}
+
+/* Hide the browser's default checkbox */
+.container input[type] {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1.25em;
+    width: 1.25em;
+    background-color: #eee;
+    transform: translateY(-50%);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "\2713";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Create a custom checkbox */
+.radiobttn {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1em;
+    width: 1em;
+    border-radius: 0.5em;
+    background-color: #eee;
+    transform: translateY(-50%);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .radiobttn {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.radiobttn:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    height: 50%;
+    width: 50%;
+    background: white;
+    border-radius: 50%;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .radiobttn:after {
+    display: block;
+}
+
+#students_search > div {
+    background-color: floralwhite;
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+}
+#students_search > div > * {
+    flex-grow: 1;
+}
+#students_search span {
+    text-align: right;
+}
+#students_search > div:hover {
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+#added_students > div {
+    position: relative;
+    margin: 4px;
+    padding: 12px 8px 12px 12px;
+    background-color: #673AB7;
+    border-radius: 4px;
+    color: white;
+}
+#added_students i {
+    margin: 0 4px;
+    cursor: pointer;
+    color: white;
+}
+#added_students i:hover {
+    color: #ccc;
+}
+#added_students p {
+    display: none;
+    position: absolute;
+    top: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    padding: 6px 12px;
+    margin: 0;
+    border-radius: 2px;
+    z-index: 1;
+}
+#added_students p::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: transparent transparent #333 transparent;
+    border-width: 4px;
+    border-style: solid;
+}
+#added_students > div:hover > p {
+    display: block;
+}
+
+.datepicker {
+    font-family: 'quicksand' !important;
+}
+.datepicker_table td {
+    cursor: pointer;
+    padding: 4px;
+    text-align: center;
+    border-radius: 4px;
+}
+.datepicker_table .hover {
+    background-color: #eee;
+}
+.datepicker_table .today {
+    background-color: #ffcdd2;
+    border-radius: 0;
+}
+.datepicker_table .active {
+    background-color: blanchedalmond;
+}
+.datepicker_table .day_another_month {
+    color: #bbb;
+}
+.datepicker_header {
+    background-color: yellowgreen !important;
+    padding: 4px !important;
+    font-size: inherit !important;
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item android:title="Submissions"-->
+        <!--android:icon="@drawable/ic_baseline_assignment_24px"-->
+        <!--android:id="@+id/submissions"/>-->
+    <item android:title="Online Feedbacks"
+        android:icon="@drawable/ic_feedback_black_24dp"
+        android:id="@+id/my_feedback"/>
+    <item android:title="My Pings"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:id="@+id/my_pings"/>
+    <item android:icon="@drawable/ic_baseline_exit_to_app_24px"
+        android:id="@+id/logout"
+        android:title="Logout"/>
+</menu>

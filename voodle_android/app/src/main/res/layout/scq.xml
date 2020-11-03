@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:focusableInTouchMode="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/que_scq"
+            android:text="This is a scq question."
+            android:textSize="20sp"/>
+        <RadioGroup
+            android:id="@+id/RGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/opt1"
+                android:text="Option 1"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/opt2"
+                android:text="Option 2"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/opt3"
+                android:text="Option 3"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/opt4"
+                android:text="Option 4"/>
+        </RadioGroup>
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Attempted"
+            android:id="@+id/scq_checked"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comments:"
+            android:textSize="15dp"
+            android:textColor="#a70303"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:id="@+id/edit_ll_scq"
+            android:focusableInTouchMode="true">
+            <EditText
+                android:inputType="text"
+                android:gravity="left"
+                android:layout_weight="30"
+                android:id="@+id/comment_in_scq"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Comments"
+                android:imeOptions="actionDone"/>
+            <ImageButton
+                android:contentDescription="to send"
+                android:layout_weight="1"
+                android:id="@+id/send_scq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_send_black_24dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ping:"
+            android:textSize="15dp"
+            android:textColor="#a70303"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:id="@+id/edit_ll_scq_ping"
+            android:focusableInTouchMode="true">
+            <EditText
+                android:inputType="text"
+                android:gravity="left"
+                android:layout_weight="30"
+                android:id="@+id/ping_in_scq"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Your ping message"
+                android:imeOptions="actionDone"/>
+            <ImageButton
+                android:contentDescription="to send"
+                android:layout_weight="1"
+                android:id="@+id/send_scq_ping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_send_black_24dp"/>
+        </LinearLayout>
+            <ListView
+                android:id="@+id/comments_view_scq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:divider="#fff"
+                android:dividerHeight="1dp"
+                android:background="#ef53ca2b"/>
+
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/finish_scq"
+        android:backgroundTint="#442fae"
+        android:text="FINISH"/>
+    <ImageButton
+        android:id="@+id/scq_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_chevron_right_black_24dp"
+        android:background="@drawable/next"
+        />
+
+</android.support.constraint.ConstraintLayout>
